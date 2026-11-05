@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anurag Kumar | Aspiring AI Engineer and CSE Student</title>
+<meta name="description" content="Portfolio of Anurag Kumar, a first-year B.Tech CSE (AI) student at BBD University, Lucknow, interested in programming, AI, web development, video editing and graphic design.">
+<meta property="og:title" content="Anurag Kumar | Aspiring AI Engineer">
+<meta property="og:description" content="First-year B.Tech CSE (AI) student: programming, AI, web development and creative design.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0f1124">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Anurag Kumar","jobTitle":"B.Tech CSE (AI) Student","alumniOf":"BBD University, Lucknow","sameAs":["https://youtube.com/@technoreviews-ai","https://www.linkedin.com/in/anuragkumar08-pri10","https://instagram.com/anuragpr_0810","https://x.com/anuragpr_0810","https://github.com/anuragpr-0810"]}</script>
+<style>
+:root{
+  --bg:#0f1124; --surface:#1a1d3a; --ink:#eceefb; --muted:#a3a8cc; --line:#32365e;
+  --magenta:#ff5c9d; --cyan:#42d0e4; --amber:#f0b44c; --on-accent:#12142b;
+  --head:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+  --body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color-scheme:dark; box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:400 1.0625rem/1.65 var(--body);
+  background:radial-gradient(900px 420px at 85% -80px,rgba(255,92,157,.16),transparent),radial-gradient(800px 400px at 0% 0%,rgba(66,208,228,.12),transparent),var(--bg);background-repeat:no-repeat}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--magenta);outline-offset:3px;border-radius:4px}
+.wrap{max-width:980px;margin:0 auto;padding:0 1.25rem}
+header.nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 0}
+.logo{font:800 1.25rem var(--head);text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:1.1rem;overflow-x:auto;scrollbar-width:none}
+nav a{text-decoration:none;color:var(--muted);font-weight:500;white-space:nowrap;transition:color .2s}
+nav a:hover{color:var(--ink)}
+h1{font:800 clamp(2.4rem,7vw,4.6rem)/1.04 var(--head);letter-spacing:-.02em;margin:3rem 0 .75rem;background:linear-gradient(100deg,var(--ink) 30%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tagline{font:700 clamp(1.05rem,2.6vw,1.4rem)/1.35 var(--head);margin:0 0 1rem;color:var(--cyan)}
+h2{font:700 clamp(1.6rem,4vw,2.2rem)/1.15 var(--head);margin:0 0 1.5rem}
+.lead{max-width:58ch;color:var(--muted);font-size:1.15rem;margin:0 0 2.5rem}
+section{padding:3.5rem 0}
+.hero-in{animation:rise .8s cubic-bezier(.3,.8,.3,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.editor{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.25rem}
+.track{position:relative;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;padding-top:1.5rem}
+.clip{font:700 1rem var(--head);border:0;border-radius:8px;padding:1.1rem .75rem;color:var(--on-accent);cursor:pointer;text-align:left;min-height:64px}
+.clip small{display:block;font:500 .8rem var(--body);opacity:.9}
+.clip[data-i="0"]{background:var(--cyan)}
+.clip[data-i="1"]{background:var(--magenta)}
+.clip[data-i="2"]{background:var(--amber)}
+.clip[aria-pressed="true"]{box-shadow:0 0 0 3px var(--ink)}
+.playhead{position:absolute;top:0;bottom:0;width:2px;background:var(--ink);left:16.66%;transition:left .35s cubic-bezier(.3,.8,.3,1);pointer-events:none}
+.playhead::before{content:"";position:absolute;top:0;left:-6px;border:7px solid transparent;border-top-color:var(--ink)}
+.readout{margin:1.25rem 0 0;min-height:3.4rem}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.5rem;transition:border-color .25s,transform .25s}
+.card:hover{border-color:var(--cyan);transform:translateY(-2px)}
+.card h3{font:700 1.25rem var(--head);margin:0 0 .4rem}
+.card p{margin:.25rem 0;color:var(--muted)}
+.empty{border-style:dashed;background:transparent}
+.empty:hover{transform:none;border-color:var(--line)}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:.5rem 0 0;list-style:none}
+.tags li{font-size:.9rem;border:1px solid var(--line);border-radius:999px;padding:.15rem .8rem}
+.tags li.learn{border-color:var(--amber);color:var(--amber)}
+.tile{aspect-ratio:4/3;display:grid;place-items:center;text-align:center;padding:1rem;color:var(--muted);font-size:.95rem}
+.journey{margin:0;padding:0;list-style:none;border-left:2px solid var(--line)}
+.journey li{position:relative;padding:0 0 1.25rem 1.5rem}
+.journey li::before{content:"";position:absolute;left:-7px;top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--magenta)}
+.journey strong{font-family:var(--head)}
+.journey span{display:block;color:var(--muted)}
+.btn{display:inline-block;background:var(--magenta);color:var(--on-accent);font-weight:500;padding:.8rem 1.4rem;border-radius:8px;text-decoration:none;border:0;font-family:var(--body);font-size:1rem;transition:filter .2s}
+.btn:hover{filter:brightness(1.1)}
+.btn[disabled]{background:var(--line);color:var(--muted);cursor:not-allowed}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.contact{background:linear-gradient(135deg,#43206b,#0e5c74);color:#fff;border-radius:16px;padding:2.5rem 1.5rem}
+.contact h2{margin-bottom:.75rem}
+.contact p{max-width:48ch;opacity:.9;margin:0 0 1.5rem}
+.links{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.25rem}
+.links a{font-weight:500}
+.note{font-size:.9rem;color:var(--muted);margin-top:1rem}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
+@media (max-width:560px){.clip small{display:none}}
+@media (prefers-reduced-motion:reduce){.playhead,.card,.hero-in{transition:none;animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <a class="logo" href="#top">Anurag</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#achievements">Achievements</a><a href="#showcase">Showcase</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero-in">
+      <h1>Anurag Kumar</h1>
+      <p class="tagline">Aspiring AI Engineer | CSE Student | Programmer | Creative Designer</p>
+      <p class="lead">I’m Anurag Kumar, a first-year B.Tech CSE-AI student passionate about programming, artificial intelligence, web development, and creative design.</p>
+    </div>
+
+    <div class="editor" aria-label="What I do">
+      <div class="track">
+        <button class="clip" data-i="0" aria-pressed="true">Code<small>C, Python</small></button>
+        <button class="clip" data-i="1" aria-pressed="false">AI<small>Learning ML</small></button>
+        <button class="clip" data-i="2" aria-pressed="false">Design<small>Video, graphics</small></button>
+        <div class="playhead" id="playhead" aria-hidden="true"></div>
+      </div>
+      <p class="readout" id="readout" aria-live="polite"></p>
+    </div>
+
+    <section id="about">
+      <h2>About me</h2>
+      <p class="lead" style="margin:0">I’m at the start of my engineering journey. I’m building my base in programming and AI, learning web development, and I enjoy video editing and graphic design. My goal is to become an AI engineer who can also present ideas in a clear, creative way.</p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <article class="card">
+        <h3>B.Tech in Computer Science and Engineering (Artificial Intelligence)</h3>
+        <p>BBD University, Lucknow</p>
+        <p>First year</p>
+      </article>
+    </section>
+
+    <section id="skills">
+      <h2>Technical skills</h2>
+      <div class="grid">
+        <article class="card"><h3>Programming</h3><ul class="tags"><li>C</li><li>Python</li><li class="learn">Java (learning)</li></ul></article>
+        <article class="card"><h3>AI and technology</h3><ul class="tags"><li>Artificial Intelligence</li><li class="learn">Machine Learning (learning)</li></ul></article>
+        <article class="card"><h3>Web development</h3><ul class="tags"><li class="learn">HTML (learning)</li><li class="learn">CSS (learning)</li><li class="learn">JavaScript (learning)</li></ul></article>
+        <article class="card"><h3>Creative skills</h3><ul class="tags"><li>Video Editing</li><li>Graphic Designing</li></ul></article>
+      </div>
+      <p class="note">I’m a first-year student. Items marked “learning” are still in progress.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <article class="card empty">
+        <h3>Projects coming soon</h3>
+        <p>I haven’t built a project yet. My first ones will appear here with code and demo links.</p>
+      </article>
+    </section>
+
+    <section id="achievements">
+      <h2>Certifications and achievements</h2>
+      <article class="card empty">
+        <h3>Nothing to show yet</h3>
+        <p>Certifications and achievements will be added here when I earn them.</p>
+      </article>
+    </section>
+
+    <section id="showcase">
+      <h2>Video editing showcase</h2>
+      <div class="grid">
+        <div class="card empty tile">Video sample 1<br>(placeholder)</div>
+        <div class="card empty tile">Video sample 2<br>(placeholder)</div>
+      </div>
+      <p class="note">My edited videos will be added here. Meanwhile, you can visit my channel.</p>
+      <p><a class="btn alt" href="https://youtube.com/@technoreviews-ai" target="_blank" rel="noopener">Visit my YouTube channel</a></p>
+    </section>
+
+    <section id="gallery">
+      <h2>Graphic design gallery</h2>
+      <div class="grid">
+        <div class="card empty tile">Design 1<br>(placeholder)</div>
+        <div class="card empty tile">Design 2<br>(placeholder)</div>
+        <div class="card empty tile">Design 3<br>(placeholder)</div>
+      </div>
+      <p class="note">My design work will be added here.</p>
+    </section>
+
+    <section id="journey">
+      <h2>My learning journey</h2>
+      <ul class="journey">
+        <li><strong>Started B.Tech CSE (AI)</strong><span>First year at BBD University, Lucknow</span></li>
+        <li><strong>Programming</strong><span>Working with C and Python, learning Java</span></li>
+        <li><strong>AI and web</strong><span>Learning machine learning, HTML, CSS and JavaScript</span></li>
+        <li><strong>Creative work</strong><span>Video editing and graphic designing alongside my studies</span></li>
+      </ul>
+    </section>
+
+    <section id="resume">
+      <h2>Resume</h2>
+      <p class="lead" style="margin-bottom:1rem">My resume will be available here once it’s ready.</p>
+      <button class="btn" disabled>Resume coming soon</button>
+    </section>
+
+    <!-- Experience and Testimonials sections are hidden until genuine content is available. -->
+
+    <section id="contact">
+      <div class="contact">
+        <h2>Let’s connect</h2>
+        <p>Open to learning, collaboration and conversation about code, AI and creative work. Send me a message.</p>
+        <a class="btn" href="mailto:anuragkumarpr0810@gmail.com">Email Anurag</a>
+        <div class="links">
+          <a href="https://github.com/anuragpr-0810" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/anuragkumar08-pri10" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://youtube.com/@technoreviews-ai" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://instagram.com/anuragpr_0810" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://x.com/anuragpr_0810" target="_blank" rel="noopener">X (Twitter)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>© 2026 Anurag Kumar</footer>
+</div>
+
+<script>
+const text=[
+ "Code: I work with C and Python, and I’m learning Java.",
+ "AI: I’m learning machine learning and building my base in artificial intelligence.",
+ "Design: I do video editing and graphic designing."
+];
+const clips=document.querySelectorAll('.clip'),head=document.getElementById('playhead'),out=document.getElementById('readout');
+function select(i){
+  clips.forEach((c,n)=>c.setAttribute('aria-pressed',n===i));
+  head.style.left=(16.66+33.33*i)+'%';
+  out.textContent=text[i];
+}
+clips.forEach(c=>{
+  c.addEventListener('click',()=>select(+c.dataset.i));
+  c.addEventListener('mouseenter',()=>select(+c.dataset.i));
+});
+select(0);
+</script>
+</body>
+</html>
