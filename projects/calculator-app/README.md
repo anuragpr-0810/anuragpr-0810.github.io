@@ -1,16 +1,25 @@
-# Prism Calculator
+# Smart Calculator
 
-A responsive scientific calculator built with HTML, CSS and vanilla JavaScript. No build step or external service is required.
+A scientific calculator built with plain HTML, CSS and JavaScript (no libraries).
 
 ## Features
-- Arithmetic, parentheses, powers, percentage postfix, square root, and degree-based sin/cos/tan.
-- Keyboard input (`0–9`, `+ - * / ^ %`, parentheses, Enter, Backspace and Escape).
-- Calculation history saved in LocalStorage, clickable to recall; clear history and AC/DEL controls.
-- Dark/light theme preference saved locally; responsive, keyboard-accessible controls.
-- Expression parser is implemented in JavaScript without `eval()`.
+- Basic arithmetic: `+ − × ÷`, brackets, decimals
+- Scientific mode: `sin cos tan log ln √ x² xʸ π e x! 1/x`, with DEG/RAD switch
+- Percentage: `50%` = 0.5, and `200 + 10%` = 220 (10% *of 200*)
+- Keyboard input (digits, operators, `Enter`, `Backspace`, `Esc`)
+- Calculation history (saved in the browser, click an entry to reuse its result)
+- Clear (`AC`) and delete (`⌫`)
+- Dark / light theme (remembered)
 
 ## Run locally
-Open `index.html` in a modern browser, or from the repository root run `python -m http.server 8000` and visit `http://localhost:8000/projects/calculator-app/`.
+Open `index.html` in a browser. No install needed.
+Or run `python -m http.server` in this folder and visit http://localhost:8000.
 
-## Preview
-See [`preview.svg`](preview.svg). All calculations and history remain in your browser.
+## How it works (good for explaining in interviews)
+- `script.js` has a small **recursive-descent parser**. It reads the expression in tokens and follows operator precedence (`^` > `* /` > `+ -`). It does **not** use `eval()`, which is unsafe.
+- History and theme are stored with `localStorage`.
+- Layout uses CSS Grid; the glass look uses `backdrop-filter`.
+
+## Known limits
+- No implicit multiplication (`2pi` must be written `2*pi`).
+- Results are rounded to 12 significant digits.

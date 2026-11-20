@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart AI Study Assistant | Anurag Kumar</title>
+<meta name="description" content="Study assistant with Q&A, explanations, notes, quizzes and summaries. FastAPI backend with a clearly labelled demo mode.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <div class="brand"><span class="logo">✦</span> Study Assistant</div>
+    <nav id="tasks" aria-label="Choose a tool"></nav>
+    <div class="side-foot">
+      <button id="clear" class="btn ghost">Clear history</button>
+      <a href="../../index.html">← Portfolio</a>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="head">
+      <h1 id="title">Ask</h1>
+      <div id="pill" class="pill off" role="status"><i></i><span>Checking backend…</span></div>
+    </header>
+    <div id="notice" class="notice" hidden></div>
+    <div id="log" class="log" aria-live="polite"></div>
+    <form id="form" class="composer">
+      <label for="input" class="sr">Your message</label>
+      <textarea id="input" rows="3" maxlength="6000" placeholder=""></textarea>
+      <button class="btn" id="send">Send</button>
+    </form>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

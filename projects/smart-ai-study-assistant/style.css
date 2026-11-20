@@ -1,0 +1,42 @@
+:root{--bg:#070a14;--panel:#111830;--bd:rgba(255,255,255,.1);--tx:#f1f5f9;--mu:#94a3b8;--p:#8b5cf6;--c:#06b6d4;--ok:#34d399;--warn:#fbbf24;--bad:#f87171;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;color:var(--tx);font:400 1rem/1.6 "Segoe UI",system-ui,-apple-system,sans-serif;background:radial-gradient(700px 420px at 85% -5%,rgba(139,92,246,.3),transparent),radial-gradient(600px 400px at 0 100%,rgba(6,182,212,.18),transparent),var(--bg)}
+.shell{display:grid;grid-template-columns:240px minmax(0,1fr);min-height:100vh}
+.side{background:rgba(17,24,48,.7);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-right:1px solid var(--bd);padding:1.25rem;display:flex;flex-direction:column;gap:1rem;position:sticky;top:0;height:100vh}
+.brand{font-weight:700;font-size:1.15rem}.logo{background:linear-gradient(135deg,var(--p),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+#tasks{display:flex;flex-direction:column;gap:.35rem}
+#tasks button{text-align:left;background:none;border:1px solid transparent;color:var(--mu);padding:.7rem .9rem;border-radius:12px;font:inherit;cursor:pointer;min-height:44px;transition:color .2s,border-color .2s}
+#tasks button:hover{color:var(--tx)}
+#tasks button[aria-pressed="true"]{color:var(--tx);border-color:var(--bd);background:linear-gradient(90deg,rgba(139,92,246,.3),rgba(6,182,212,.15))}
+.side-foot{margin-top:auto;display:flex;flex-direction:column;gap:.6rem}.side-foot a{color:var(--c);font-size:.9rem}
+.main{display:flex;flex-direction:column;min-width:0;height:100vh;padding:1.25rem 1.5rem}
+.head{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:space-between;align-items:center;margin-bottom:.75rem}h1{margin:0;font-size:1.5rem}
+.pill{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--bd);border-radius:99px;padding:.3rem .9rem;font-size:.88rem}
+.pill i{width:9px;height:9px;border-radius:50%;background:var(--bad)}
+.pill.demo i{background:var(--warn);animation:pulse 2s infinite}.pill.live i{background:var(--ok);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.notice{border:1px solid rgba(251,191,36,.45);background:rgba(251,191,36,.1);color:var(--warn);padding:.7rem 1rem;border-radius:12px;font-size:.92rem;margin-bottom:.75rem}
+.notice code{background:rgba(255,255,255,.08);padding:.1rem .35rem;border-radius:6px}
+.log{flex:1;overflow:auto;display:flex;flex-direction:column;gap:.8rem;padding:.25rem .25rem 1rem}
+.msg{max-width:min(720px,92%);padding:.8rem 1rem;border-radius:16px;border:1px solid var(--bd);white-space:pre-wrap;overflow-wrap:anywhere;animation:rise .35s ease}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}}
+.msg.user{align-self:flex-end;background:linear-gradient(135deg,rgba(139,92,246,.45),rgba(6,182,212,.3))}
+.msg.assistant{align-self:flex-start;background:var(--panel)}
+.msg.system{align-self:center;color:var(--bad);border-color:rgba(248,113,113,.4);background:rgba(248,113,113,.08);font-size:.92rem}
+.tag{display:inline-block;font:600 .72rem ui-monospace,Consolas,monospace;border-radius:6px;padding:.1rem .5rem;margin-bottom:.4rem}
+.tag.ai{background:rgba(52,211,153,.18);color:var(--ok)}.tag.demo{background:rgba(251,191,36,.18);color:var(--warn)}
+.empty{margin:auto;text-align:center;color:var(--mu);max-width:420px}
+.composer{display:flex;gap:.6rem;align-items:flex-end;border-top:1px solid var(--bd);padding-top:.9rem}
+textarea{flex:1;background:#0b1126;color:var(--tx);border:1px solid var(--bd);border-radius:14px;padding:.7rem .9rem;font:inherit;resize:vertical;min-height:72px;max-height:220px}
+.btn{background:linear-gradient(90deg,var(--p),var(--c));color:#fff;border:0;border-radius:12px;padding:.7rem 1.3rem;font:600 1rem "Segoe UI",system-ui,sans-serif;cursor:pointer;min-height:46px;transition:transform .15s,filter .2s}
+.btn:hover{filter:brightness(1.1);transform:translateY(-1px)}.btn:disabled{opacity:.5;cursor:wait;transform:none}
+.btn.ghost{background:transparent;border:1px solid var(--bd);color:var(--tx)}
+:focus-visible{outline:3px solid var(--c);outline-offset:2px}
+.sr{position:absolute;left:-9999px}
+@media (max-width:800px){
+  .shell{grid-template-columns:1fr}
+  .side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;border-right:0;border-bottom:1px solid var(--bd);padding:.75rem 1rem}
+  #tasks{flex-direction:row;flex-wrap:wrap}.side-foot{flex-direction:row;margin:0;align-items:center}
+  .main{height:auto;min-height:80vh;padding:1rem}.log{min-height:300px}.composer{flex-direction:column;align-items:stretch}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

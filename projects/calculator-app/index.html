@@ -1,27 +1,37 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#101024"><meta name="description" content="A responsive scientific calculator with keyboard support, history, and themes.">
-  <title>Prism Calculator</title><link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Calculator | Anurag Kumar</title>
+<meta name="description" content="A scientific calculator with history, keyboard input and dark/light mode, built with HTML, CSS and JavaScript.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="shell">
-    <header class="topbar"><a class="brand" href="../../"> <span class="brand-mark">◈</span> PRISM <small>CALCULATOR</small></a><button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle light theme" title="Toggle theme">☼</button></header>
-    <section class="calculator" aria-label="Calculator">
-      <div class="display"><div class="display-meta"><span>SCIENTIFIC</span><span id="status" aria-live="polite">Ready</span></div><div id="expression" class="expression" aria-label="Expression">0</div><div id="result" class="result" aria-live="polite">0</div></div>
-      <div class="keypad" aria-label="Calculator keys">
-        <button data-action="clear" class="key utility">AC</button><button data-action="delete" class="key utility">DEL</button><button data-value="%" class="key utility">%</button><button data-value="/" class="key operator">÷</button>
-        <button data-value="sin(" class="key function">sin</button><button data-value="cos(" class="key function">cos</button><button data-value="tan(" class="key function">tan</button><button data-value="*" class="key operator">×</button>
-        <button data-value="7" class="key">7</button><button data-value="8" class="key">8</button><button data-value="9" class="key">9</button><button data-value="-" class="key operator">−</button>
-        <button data-value="4" class="key">4</button><button data-value="5" class="key">5</button><button data-value="6" class="key">6</button><button data-value="+" class="key operator">+</button>
-        <button data-value="sqrt(" class="key function">√</button><button data-value="^" class="key function">xʸ</button><button data-value="(" class="key">(</button><button data-value=")" class="key">)</button>
-        <button data-value="1" class="key">1</button><button data-value="2" class="key">2</button><button data-value="3" class="key">3</button><button data-action="equals" class="key equals" aria-label="Calculate">=</button>
-        <button data-value="0" class="key zero">0</button><button data-value="." class="key">.</button><button data-action="sign" class="key">±</button>
-      </div>
-      <p class="hint">Keyboard: 0–9, + − * /, Enter, Backspace, Esc · Trig uses degrees</p>
+<main class="app">
+  <header class="top">
+    <h1>Smart Calculator</h1>
+    <div class="tools">
+      <button id="sci" class="pill" aria-pressed="false">Scientific</button>
+      <button id="deg" class="pill" aria-label="Angle unit: degrees">DEG</button>
+      <button id="theme" class="pill" aria-label="Switch light or dark theme">Theme</button>
+    </div>
+  </header>
+  <div class="layout">
+    <section class="calc glass" aria-label="Calculator">
+      <output id="expr" class="expr"></output>
+      <output id="res" class="res" aria-live="polite">0</output>
+      <div id="sciKeys" class="keys sci-keys" hidden></div>
+      <div id="keys" class="keys"></div>
     </section>
-    <aside class="history-panel"><div class="history-heading"><div><p class="eyebrow">YOUR WORKSPACE</p><h2>History</h2></div><button id="clear-history" class="text-btn">Clear history</button></div><ol id="history" class="history-list"><li class="history-empty">Your calculations will appear here.</li></ol></aside>
-    <footer>Prism Calculator <span>·</span> Calculations stay in this browser</footer>
-  </main><script src="app.js"></script>
-</body></html>
+    <aside class="hist glass" aria-label="Calculation history">
+      <div class="hh"><h2>History</h2><button id="clearHist" class="pill">Clear</button></div>
+      <ul id="list"></ul>
+    </aside>
+  </div>
+  <p class="hint">Keyboard: digits, + − * / ^ ( ) % ! . &nbsp;·&nbsp; Enter = equals &nbsp;·&nbsp; Backspace = delete &nbsp;·&nbsp; Esc = clear</p>
+  <p class="hint"><a href="../../index.html">← Back to portfolio</a></p>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

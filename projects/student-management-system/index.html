@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Management System | Anurag Kumar</title>
+<meta name="description" content="Student management dashboard with attendance, marks, search, CSV export and browser storage. Demo data only.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <div class="brand">🎓 StudentHub</div>
+    <nav id="nav" aria-label="Main">
+      <button data-view="dash" aria-current="page">Dashboard</button>
+      <button data-view="students">Students</button>
+      <button data-view="att">Attendance</button>
+      <button data-view="marks">Marks</button>
+    </nav>
+    <div class="side-foot">
+      <button id="exportCsv" class="btn">Export CSV</button>
+      <button id="reset" class="btn ghost">Reset demo data</button>
+      <a href="../../index.html">← Portfolio</a>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="banner" role="note"><strong>Demo data only.</strong> These are sample students, not real people. Data is stored in your browser (localStorage).</div>
+    <p id="status" class="sr" role="status" aria-live="polite"></p>
+
+    <section id="v-dash" class="view">
+      <h1>Dashboard</h1>
+      <div class="stats" id="stats"></div>
+      <div class="two">
+        <div class="panel"><h2>Average marks by subject</h2><div id="bars"></div></div>
+        <div class="panel"><h2>Grade distribution</h2><div id="grades" class="chips"></div></div>
+      </div>
+    </section>
+
+    <section id="v-students" class="view" hidden>
+      <div class="row"><h1>Students</h1><button id="addBtn" class="btn">+ Add student</button></div>
+      <div class="filters">
+        <input id="q" type="search" placeholder="Search name, roll or email" aria-label="Search students">
+        <select id="courseFilter" aria-label="Filter by course"></select>
+      </div>
+      <div class="tw"><table><thead><tr><th>Roll</th><th>Name</th><th>Course</th><th>Email</th><th>Avg</th><th>Attendance</th><th>Grade</th><th>Actions</th></tr></thead><tbody id="stuBody"></tbody></table></div>
+    </section>
+
+    <section id="v-att" class="view" hidden>
+      <div class="row"><h1>Attendance</h1><div><label>Date <input id="attDate" type="date"></label> <button id="allPresent" class="btn ghost">Mark all present</button></div></div>
+      <div class="tw"><table><thead><tr><th>Roll</th><th>Name</th><th>Status on this date</th><th>Overall</th></tr></thead><tbody id="attBody"></tbody></table></div>
+    </section>
+
+    <section id="v-marks" class="view" hidden>
+      <h1>Marks &amp; performance</h1>
+      <p class="muted">Enter marks out of 100. Changes save automatically.</p>
+      <div class="tw"><table><thead><tr><th>Roll</th><th>Name</th><th>Maths</th><th>Programming</th><th>English</th><th>Average</th><th>Grade</th></tr></thead><tbody id="markBody"></tbody></table></div>
+    </section>
+  </main>
+</div>
+
+<dialog id="dlg" aria-labelledby="dlgT">
+  <form id="form" novalidate>
+    <h2 id="dlgT">Add student</h2>
+    <label>Roll number *<input name="roll" required maxlength="20"></label>
+    <label>Full name *<input name="name" required maxlength="60"></label>
+    <label>Course<input name="course" list="courses" maxlength="40" placeholder="e.g. B.Tech CSE"></label>
+    <datalist id="courses"><option value="B.Tech CSE"><option value="B.Tech CSE (AI)"><option value="BCA"><option value="BBA"></datalist>
+    <label>Email<input name="email" type="email" maxlength="80"></label>
+    <p id="formErr" class="err" role="alert"></p>
+    <div class="row"><button type="button" id="cancel" class="btn ghost">Cancel</button><button class="btn">Save</button></div>
+  </form>
+</dialog>
+<script src="script.js"></script>
+</body>
+</html>

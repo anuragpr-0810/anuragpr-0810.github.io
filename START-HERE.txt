@@ -1,0 +1,22 @@
+IMPORTANT - READ BEFORE OPENING THE WEBSITE
+
+1. EXTRACT THE WHOLE ZIP FIRST (Windows: right-click the zip -> "Extract All...").
+   Do NOT double-click index.html while it is still inside the zip window.
+   Windows then copies ONLY index.html to a temporary folder, so every image
+   and PDF looks "missing" and "broken".
+
+2. Open the extracted folder. It must look like this (all side by side):
+
+     index.html
+     certificates/   (5 original certificates + thumbs/ folder)
+     projects/       (calculator-app, student-management-system, smart-ai-study-assistant)
+     resume/         (Anurag-Kumar-Resume-ATS.pdf, Anurag-Kumar-Resume-Premium.pdf)
+
+3. Double-click index.html (it opens in your browser).
+
+4. Never move index.html out of this folder. Keep the folders next to it.
+
+5. For GitHub Pages: upload index.html AND the three folders
+   (certificates, projects, resume) to the root of the repository.
+
+Total: 42 files.
